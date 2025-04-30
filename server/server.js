@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 
 const app = express();
 
-const frontend = 'http://localhost:3000';
+const frontend = process.env.FRONTEND_URL || 'http://localhost:3000';
 
 const corsOptions = {
   origin: frontend,

@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+require('dotenv').config();
 function App() {
   // signup & login page
   const [name, setName] = useState('');
@@ -11,7 +12,8 @@ function App() {
   const handleClick = async (e) => {
     e.preventDefault();
     console.log(name, email, password, isLogin);
-    const url = isLogin ? 'http://localhost:5050/login' : 'http://localhost:5050/signup';
+    const preurl = process.env.BACKEND_URL || 'http://localhost:5050';
+    const url = isLogin ? preurl + '/login' : preurl + '/signup';
     const payload = { name, email, password };
 
     try {
