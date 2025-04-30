@@ -51,6 +51,7 @@ function App() {
             placeholder="Full Name *"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            autoComplete="on"
           />
         }
         <input
@@ -59,6 +60,7 @@ function App() {
           placeholder="Email *"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          autoComplete="on"
         />
         <input
           required
@@ -68,6 +70,7 @@ function App() {
           value={password}
           style={{marginBottom: `${isLogin ? '0px' : '30px'}`}}
           onChange={(e) => setPassword(e.target.value)}
+          autoComplete="on"
         />
         {isLogin &&
           <button className='underlineButton forgotPassword' style={{marginTop: '0px'}} onClick={(e) => {e.preventDefault();}} >forgot password</button>}
