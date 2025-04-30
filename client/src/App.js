@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
-require('dotenv').config();
 function App() {
+  require('dotenv').config();
   // signup & login page
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
