@@ -1,0 +1,10 @@
+{
+  "short_name": "Lounch Base",
+  "name": "Lounch Base",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "manifest_version": 3,
+  "version": "0.0.1"
+}

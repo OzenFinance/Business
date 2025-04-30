@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+h1 {
+  text-align: center;
+  margin: 0px;
+  margin-bottom: 30px;
+  padding: 0;
+  font-size: 48px;
+  font-weight: 800; 
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 60px;
+  padding: 60px;
+  border: 1px solid #eeee;
+  border-radius: 5px;
+  background-color: #fefdfe;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #FEFEFE;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+button:not(.switchForm) {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:not(.switchForm):hover {
+  background-color: #0069d9;
+}
+
+
+.switchForm {
+  margin-top:30px;
+}
+
+.underlineButton {
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  background-color: transparent !important;
+  color: #000 !important;
+  margin-top: 0px;
+}
+
+.topinput {
+  margin-top: 20px;
+}
+
+.bottominput {
+  margin-bottom: 5px;
+}
+
+.forgotPassword {
+  margin-top: 0px;
+  display: flex;
+  justify-content: end;
+  font-size: small !important;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
