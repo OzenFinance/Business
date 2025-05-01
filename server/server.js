@@ -4,6 +4,7 @@ const cors = require('cors');
 require('dotenv').config();
 const User = require('./models/User');
 const bcrypt = require('bcrypt');
+const formationRoutes = require('./routes/formation');
 
 const app = express();
 
@@ -16,15 +17,20 @@ const corsOptions = {
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
+
 app.use(cors(corsOptions)); 
 // app.options('/signup', cors(corsOptions)); // Handle preflight requests
-
 app.use(express.json());
 
+// MongoDB connection
 mongoose.connect(process.env.MONGO_URI_TOKEN)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.error(err));
 
+// Routes
+app.use('/api', formationRoutes);
+
+// Signup route
 app.post('/signup', async (req, res) => {
     const { name, email, password } = req.body;
     console.log(name, email, password);
@@ -41,6 +47,7 @@ app.post('/signup', async (req, res) => {
     }
 });
 
+// Login route
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   console.log(email, password);
