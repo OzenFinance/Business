@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Eye, EyeOff, Loader2 } from 'lucide-react';
+import '../App.css';
 
 function AuthIn() {
   const [activeTab, setActiveTab] = useState('login');
@@ -53,7 +54,7 @@ function AuthIn() {
           <div className="grid grid-cols-2 mt-2 border-4 border-gray-100 rounded-md overflow-hidden">
             <button
               onClick={() => { setActiveTab('login'); setIsLoading(false); }}
-              className={`py-2 text-sm font-medium ${
+              className={`py-2 text-sm font-medium cursor-pointer ${
                 activeTab === 'login' ? 'bg-white text-black' : 'bg-gray-100 text-gray-500'
               }`}
             >
@@ -61,7 +62,7 @@ function AuthIn() {
             </button>
             <button
               onClick={() => { setActiveTab('signup'); setIsLoading(false); }}
-              className={`py-2 text-sm font-medium ${
+              className={`py-2 text-sm font-medium cursor-pointer ${
                 activeTab === 'signup' ? 'bg-white text-black' : 'bg-gray-100 text-gray-500'
               }`}
             >
@@ -96,19 +97,19 @@ function AuthIn() {
                     className="absolute right-0 top-0 h-full px-3"
                     onClick={() => setShowPassword(!showPassword)}
                   >
-                    {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                    {showPassword ? <EyeOff className="w-4 h-4 cursor-pointer" /> : <Eye className="w-4 h-4 cursor-pointer" />}
                   </button>
                 </div>
               </div>
               <div className="flex justify-end">
-                <a href="/forgot-password" className="text-sm text-gray-500 hover:text-black">
+                <a href="/forgot-password" className="text-sm text-gray-500 cursor-pointer hover:text-black">
                   Forgot password?
                 </a>
               </div>
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full text-white py-2 rounded-md bg-black hover:bg-gray-900"
+                className="w-full text-white py-2 rounded-md bg-black cursor-pointer hover:bg-gray-900"
                 onClick={(e) => { e.preventDefault(); setIsLoading(true); handleClick(); }}
               >
                 {isLoading ? (
@@ -157,7 +158,7 @@ function AuthIn() {
                     className="absolute right-0 top-0 h-full px-3"
                     onClick={() => setShowPassword(!showPassword)}
                   >
-                    {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                    {showPassword ? <EyeOff className="w-4 h-4 cursor-pointer" /> : <Eye className="w-4 h-4 cursor-pointer" />}
                   </button>
                 </div>
               </div>
@@ -175,7 +176,7 @@ function AuthIn() {
                     className="absolute right-0 top-0 h-full px-3"
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   >
-                    {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                    {showConfirmPassword ? <EyeOff className="w-4 h-4 cursor-pointer" /> : <Eye className="w-4 h-4 cursor-pointer" />}
                   </button>
                 </div>
                 {passwordMismatch && (
@@ -185,7 +186,7 @@ function AuthIn() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-black text-white py-2 rounded-md"
+                className="w-full bg-black text-white py-2 rounded-md cursor-pointer hover:bg-gray-900"
                 onClick={(e) => { e.preventDefault(); if(!passwordMismatch) {setIsLoading(true); handleClick();} }}
               >
                 {isLoading ? (
@@ -211,8 +212,8 @@ function AuthIn() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <button className="w-full border py-2 rounded-md transition duration-300 ease-in-out hover:bg-black hover:text-white">Google</button>
-            <button className="w-full border py-2 rounded-md transition duration-300 ease-in-out hover:bg-black hover:text-white">GitHub</button>
+            <button className="w-full border py-2 rounded-md transition duration-300 cursor-pointer ease-in-out hover:bg-black hover:text-white">Google</button>
+            <button className="w-full border py-2 rounded-md transition duration-300 cursor-pointer ease-in-out hover:bg-black hover:text-white">GitHub</button>
           </div>
         </div>
       </div>
